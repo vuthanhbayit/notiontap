@@ -1,12 +1,12 @@
 <template>
-  <Menu as="div" class="relative inline-block text-left">
-    <div>
-      <MenuButton class="toolbar-button w-auto">
+  <menu-wrapper as="div" class="relative inline-block text-left">
+    <base-tooltip title="Text color">
+      <menu-button class="toolbar-button w-auto">
         <i class="w-4 h-4 i-ri-font-color"></i>
 
         <i class="w-4 h-4 i-ri-arrow-drop-down-line"></i>
-      </MenuButton>
-    </div>
+      </menu-button>
+    </base-tooltip>
 
     <transition
       enter-active-class="transition duration-100 ease-out"
@@ -16,7 +16,7 @@
       leave-from-class="transform scale-100 opacity-100"
       leave-to-class="transform scale-95 opacity-0"
     >
-      <MenuItems
+      <menu-items
         class="absolute right-0 mt-2 py-1 w-56 max-h-72 overflow-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
       >
         <template v-for="option in options">
@@ -27,7 +27,7 @@
           </div>
 
           <div v-else :key="option.label" class="px-1 py-0.5">
-            <MenuItem v-slot="{ active }">
+            <menu-item v-slot="{ active }">
               <button
                 :class="{
                   'bg-neutral-100': active,
@@ -49,17 +49,18 @@
                   {{ option.label }}
                 </span>
               </button>
-            </MenuItem>
+            </menu-item>
           </div>
         </template>
-      </MenuItems>
+      </menu-items>
     </transition>
-  </Menu>
+  </menu-wrapper>
 </template>
 
 <script lang="ts" setup>
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import { Menu as MenuWrapper, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { computed } from 'vue'
+import BaseTooltip from '@/components/base-tooltip.vue'
 
 interface Color {
   type: 'color' | 'backgroundColor'
