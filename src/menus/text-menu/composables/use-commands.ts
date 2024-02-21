@@ -14,5 +14,23 @@ export const useCommands = (editor: Editor) => {
         .focus()
         .setLink({ href: state.url, target: state.inNewTab ? '_blank' : '' })
         .run(),
+    onSetColor: (color: string) => {
+      editor.chain().focus().unsetHighlight().run()
+
+      if (color) {
+        return editor.chain().focus().setColor(color).run()
+      }
+
+      editor.chain().focus().unsetColor().run()
+    },
+    onSetBackgroundColor: (color: string) => {
+      editor.chain().focus().unsetColor().run()
+
+      if (color) {
+        return editor.chain().setHighlight({ color }).run()
+      }
+
+      editor.chain().focus().unsetHighlight().run()
+    },
   }
 }

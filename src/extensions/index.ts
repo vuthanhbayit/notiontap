@@ -2,6 +2,9 @@ import StarterKit from '@tiptap/starter-kit'
 import { Underline } from '@tiptap/extension-underline'
 import { TaskList } from '@tiptap/extension-task-list'
 import { TaskItem } from '@tiptap/extension-task-item'
+import { TextStyle } from '@tiptap/extension-text-style'
+import { Color } from '@tiptap/extension-color'
+import { Highlight } from '@tiptap/extension-highlight'
 
 import Blockquote from './blockquote'
 import BulletList from './bullet-list'
@@ -28,6 +31,11 @@ const simpleExtensions = [
   Underline,
   TaskList,
   TaskItem,
+  TextStyle,
+  Color,
+  Highlight.configure({
+    multicolor: true,
+  }),
   StarterKit.configure({
     dropcursor: {
       class: 'dropcusor',
@@ -45,13 +53,18 @@ const simpleExtensions = [
 
 export {
   simpleExtensions,
-  StarterKit,
   Blockquote,
   BulletList,
+  CodeBlock,
   Draggable,
   Heading,
   HorizontalRule,
   OrderedList,
   Placeholder,
   SlashCommand,
+  Link,
+  Underline,
+  TaskList,
+  TaskItem,
+  Color,
 }

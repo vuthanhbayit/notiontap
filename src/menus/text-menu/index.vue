@@ -20,6 +20,13 @@
       ></toolbar-button>
 
       <link-command :on-set-link="commands.onLink"></link-command>
+
+      <color-command
+        :current-background="states.currentHighlight()"
+        :current-color="states.currentColor()"
+        :on-set-background="commands.onSetBackgroundColor"
+        :on-set-color="commands.onSetColor"
+      ></color-command>
     </toolbar-wrapper>
   </bubble-menu>
 </template>
@@ -32,6 +39,7 @@ import ToolbarButton from '@/components/toolbar-button.vue'
 
 import LinkCommand from './components/link-command.vue'
 import TypographyCommand from './components/typography-command.vue'
+import ColorCommand from './components/color-command.vue'
 import { useStates, useCommands, useTypographyConfig, useToolbarCommandConfig } from './composables'
 
 interface Props {
