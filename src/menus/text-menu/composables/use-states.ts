@@ -28,6 +28,7 @@ export const useStates = (editor: Editor) => {
     isUnderline: () => editor.isActive('underline'),
     isCode: () => editor.isActive('code'),
     isCodeBlock: () => editor.isActive('codeBlock'),
+    isLink: () => editor.isActive('link'),
     isSubscript: () => editor.isActive('subscript'),
     isSuperscript: () => editor.isActive('superscript'),
     isAlignLeft: () => editor.isActive({ textAlign: 'left' }),

@@ -49,6 +49,7 @@
         icon="i-ri-code-box-line"
         title="Code Block"
       ></toolbar-button>
+      <link-command :on-set-link="commands.onLink"></link-command>
     </toolbar-wrapper>
   </bubble-menu>
 </template>
@@ -58,6 +59,8 @@ import { BubbleMenu } from '@tiptap/vue-3'
 import type { Editor } from '@tiptap/core'
 import ToolbarWrapper from '@/components/toolbar-wrapper.vue'
 import ToolbarButton from '@/components/toolbar-button.vue'
+
+import LinkCommand from './components/link-command.vue'
 import { useStates, useCommands } from './composables'
 
 interface Props {

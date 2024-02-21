@@ -1,15 +1,14 @@
 <template>
-  <div
-    :class="isVertical ? 'flex-col p-2' : 'flex-row p-1 items-center'"
-    class="inline-flex bg-white rounded-lg border border-neutral-200"
-  >
+  <surface :class="isVertical ? 'flex-col p-2' : 'flex-row p-1 items-center'" with-border>
     <div class="px-1 inline-flex h-full leading-none gap-0.5">
       <slot></slot>
     </div>
-  </div>
+  </surface>
 </template>
 
 <script lang="ts" setup>
+import Surface from '@/components/surface.vue'
+
 interface Props {
   isVertical?: boolean
 }

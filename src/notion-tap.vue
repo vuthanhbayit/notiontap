@@ -2,6 +2,7 @@
   <div class="notion-tap">
     <editor-content v-if="editor" :editor="editor" class="notion-tap__content"></editor-content>
     <text-menu v-if="editor" :editor="editor"></text-menu>
+    <link-menu v-if="editor" :editor="editor"></link-menu>
   </div>
 </template>
 
@@ -10,6 +11,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import { simpleExtensions } from '@/extensions'
 import TextMenu from '@/menus/text-menu/index.vue'
+import LinkMenu from '@/menus/link-menu/index.vue'
 
 const modelValue = defineModel<string>({ required: true })
 

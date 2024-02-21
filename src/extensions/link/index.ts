@@ -4,6 +4,7 @@ export default Link.extend({
   addOptions() {
     return {
       ...this.parent?.(),
+      openOnClick: false,
     }
   },
 })
