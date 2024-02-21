@@ -7,48 +7,18 @@
     plugin-key="text-menu"
   >
     <toolbar-wrapper>
+      <typography-command :options="typographyOptions"></typography-command>
+
       <toolbar-button
-        :command="commands.onBold"
-        :is-active="states.isBold()"
-        :shortcuts="['Mod', 'B']"
-        icon="i-ri-bold"
-        title="Bold"
+        v-for="(command, index) in toolbarCommands"
+        :key="index"
+        :command="command.command"
+        :icon="command.icon"
+        :is-active="command.isActive()"
+        :shortcuts="command.shortcuts"
+        :title="command.title"
       ></toolbar-button>
-      <toolbar-button
-        :command="commands.onItalic"
-        :is-active="states.isItalic()"
-        :shortcuts="['Mod', 'I']"
-        icon="i-ri-italic"
-        title="Italic"
-      ></toolbar-button>
-      <toolbar-button
-        :command="commands.onUnderline"
-        :is-active="states.isUnderline()"
-        :shortcuts="['Mod', 'U']"
-        icon="i-ri-underline"
-        title="Underline"
-      ></toolbar-button>
-      <toolbar-button
-        :command="commands.onStrike"
-        :is-active="states.isStrike()"
-        :shortcuts="['Mod', 'Shift', 'S']"
-        icon="i-ri-strikethrough"
-        title="Strikethrough"
-      ></toolbar-button>
-      <toolbar-button
-        :command="commands.onCode"
-        :is-active="states.isCode()"
-        :shortcuts="['Mod', 'E']"
-        icon="i-ri-code-line"
-        title="Code"
-      ></toolbar-button>
-      <toolbar-button
-        :command="commands.onCodeBlock"
-        :is-active="states.isCodeBlock()"
-        :shortcuts="['Mod', 'Alt', 'c']"
-        icon="i-ri-code-box-line"
-        title="Code Block"
-      ></toolbar-button>
+
       <link-command :on-set-link="commands.onLink"></link-command>
     </toolbar-wrapper>
   </bubble-menu>
@@ -61,7 +31,8 @@ import ToolbarWrapper from '@/components/toolbar-wrapper.vue'
 import ToolbarButton from '@/components/toolbar-button.vue'
 
 import LinkCommand from './components/link-command.vue'
-import { useStates, useCommands } from './composables'
+import TypographyCommand from './components/typography-command.vue'
+import { useStates, useCommands, useTypographyConfig, useToolbarCommandConfig } from './composables'
 
 interface Props {
   editor: Editor
@@ -71,4 +42,6 @@ const props = defineProps<Props>()
 
 const states = useStates(props.editor)
 const commands = useCommands(props.editor)
+const { typographyOptions } = useTypographyConfig(props.editor)
+const { toolbarCommands } = useToolbarCommandConfig(props.editor)
 </script>
