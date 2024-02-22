@@ -52,3 +52,11 @@
   --tw-border-opacity: 1;
   border-color: rgb(245 245 245/var(--tw-border-opacity))
 }
+
+.ProseMirror [data-type=column]>:first-child {
+  margin-top: 0
+}
+
+.ProseMirror [data-type=column]>:last-child {
+  margin-bottom: 0
+}
