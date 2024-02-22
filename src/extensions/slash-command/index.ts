@@ -15,16 +15,22 @@ const Command = Extension.create({
     return {
       suggestion: {
         char: '/',
-        command: ({
-          editor,
-          range,
-          props,
-        }: {
-          editor: Editor
-          range: Range
-          props: { command: (opts: CommandProps) => void }
-        }) => {
-          props.command({ editor, range })
+        command: ({ editor, range, props }: { editor: Editor; range: Range; props: any }) => {
+          const { view, state } = editor
+          const { $head, $from } = view.state.selection
+
+          const end = $from.pos
+          const from = $head?.nodeBefore
+            ? end - ($head.nodeBefore.text?.substring($head.nodeBefore.text?.indexOf('/')).length ?? 0)
+            : $from.start()
+
+          const tr = state.tr.deleteRange(from, end)
+          view.dispatch(tr)
+
+          props.action?.(editor)
+          props.command?.({ editor, range })
+
+          view.focus()
         },
       },
     }
@@ -33,6 +39,24 @@ const Command = Extension.create({
     return [
       Suggestion({
         editor: this.editor,
+        allowSpaces: true,
+        startOfLine: true,
+        allow: ({ state, range }) => {
+          const $from = state.doc.resolve(range.from)
+          const isRootDepth = $from.depth === 1
+          const isParagraph = $from.parent.type.name === 'paragraph'
+          const isStartOfNode = $from.parent.textContent?.charAt(0) === '/'
+          // TODO
+          const isInColumn = this.editor.isActive('column')
+
+          const afterContent = $from.parent.textContent?.substring($from.parent.textContent?.indexOf('/'))
+          const isValidAfterContent = !afterContent?.endsWith('  ')
+
+          return (
+            ((isRootDepth && isParagraph && isStartOfNode) || (isInColumn && isParagraph && isStartOfNode)) &&
+            isValidAfterContent
+          )
+        },
         ...this.options.suggestion,
       }),
     ]

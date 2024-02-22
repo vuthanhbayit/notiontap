@@ -22,13 +22,12 @@ function absoluteRect(node: Element) {
 }
 
 function nodeDOMAtCoords(coords: { x: number; y: number }) {
-  return document
-    .elementsFromPoint(coords.x, coords.y)
-    .find(
-      (elem: Element) =>
-        elem.parentElement?.matches?.('.ProseMirror') ||
-        elem.matches(['li', 'p:not(:first-child)', 'pre', 'blockquote', 'h1, h2, h3, h4, h5, h6'].join(', ')),
+  return document.elementsFromPoint(coords.x, coords.y).find((elem: Element) => {
+    return (
+      elem.parentElement?.matches?.('.ProseMirror') ||
+      elem.matches(['li', 'p:not(:first-child)', 'pre', 'blockquote', 'h1, h2, h3, h4, h5, h6'].join(', '))
     )
+  })
 }
 
 function nodePosAtDOM(node: Element, view: EditorView, options: DragHandleOptions) {
@@ -130,16 +129,15 @@ function DragHandle(options: DragHandleOptions) {
     props: {
       handleDOMEvents: {
         mousemove: (view, event) => {
-          if (!view.editable) {
-            return
-          }
+          if (!view.editable) return
 
           const node = nodeDOMAtCoords({
             x: event.clientX + 50 + options.dragHandleWidth,
             y: event.clientY,
           })
 
-          if (!(node instanceof Element)) {
+          // hidden with table
+          if (!(node instanceof Element) || (node && node.matches('.tableWrapper, .tableWrapper *'))) {
             hideDragHandle()
             return
           }

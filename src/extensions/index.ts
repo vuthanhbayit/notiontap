@@ -18,6 +18,8 @@ import OrderedList from './ordered-list'
 import Placeholder from './placeholder'
 import SlashCommand from './slash-command'
 
+import { Table, TableCell, TableHeader, TableRow } from './table'
+
 const simpleExtensions = [
   Blockquote,
   BulletList,
@@ -34,6 +36,10 @@ const simpleExtensions = [
   TaskItem,
   TextStyle,
   Color,
+  Table,
+  TableCell,
+  TableHeader,
+  TableRow,
   Highlight.configure({
     multicolor: true,
   }),

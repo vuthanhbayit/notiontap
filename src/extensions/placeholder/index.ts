@@ -8,7 +8,7 @@ const Placeholder = TiptapPlaceholder.configure({
 
     return "Press '/' for commands"
   },
-  includeChildren: true,
+  includeChildren: false,
 })
 
 export default Placeholder

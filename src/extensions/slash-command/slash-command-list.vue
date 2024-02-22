@@ -13,6 +13,7 @@
         <div class="mt-1 flex flex-col space-y-1">
           <button
             v-for="item in items"
+            :id="'slash-command-' + item.index"
             :key="item.index"
             :class="item.index === selectedIndex ? 'bg-stone-100 text-stone-900' : ''"
             class="flex items-center w-full px-2 py-1 space-x-2 text-sm text-left rounded-md text-stone-900 hover:bg-stone-100"
@@ -133,7 +134,7 @@ function updateScrollView(container: HTMLElement, item: HTMLElement) {
 
 function scrollToSelected() {
   const container = commandListContainer.value
-  const item = container?.children[selectedIndex.value] as HTMLElement
+  const item = container?.querySelector('#slash-command-' + selectedIndex.value) as HTMLElement
 
   if (container && item) {
     updateScrollView(container, item)
