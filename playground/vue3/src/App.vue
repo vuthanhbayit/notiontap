@@ -1,6 +1,11 @@
 <template>
   <div style="padding: 50px">
-    <notion-tap v-model="content"></notion-tap>
+    <div class="flex">
+      <notion-tap v-model="content" class="w-2/3"></notion-tap>
+      <div class="w-1/3">
+        {{ content }}
+      </div>
+    </div>
   </div>
 </template>
 

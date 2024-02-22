@@ -72,8 +72,6 @@ export default Node.create<TableCellOptions>({
             const decorations: Decoration[] = []
             const cells = getCellsInColumn(0)(selection)
 
-            console.log('cells', cells)
-
             if (cells) {
               cells.forEach(({ pos }: { pos: number }, index: number) => {
                 decorations.push(

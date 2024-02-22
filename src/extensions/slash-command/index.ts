@@ -5,8 +5,7 @@ import tippy from 'tippy.js'
 import Suggestion from '@tiptap/suggestion'
 
 import SlashCommandList from './slash-command-list.vue'
-import type { CommandProps } from './types.ts'
-import type { SuggestionItem } from './types.ts'
+import type { CommandProps, SuggestionItem } from './types.ts'
 import { isArray, uniq } from '@vt7/utils'
 
 const Command = Extension.create({
@@ -16,21 +15,23 @@ const Command = Extension.create({
       suggestion: {
         char: '/',
         command: ({ editor, range, props }: { editor: Editor; range: Range; props: any }) => {
-          const { view, state } = editor
-          const { $head, $from } = view.state.selection
+          // TODO: Fix auto clear suggestion text after enter
 
-          const end = $from.pos
-          const from = $head?.nodeBefore
-            ? end - ($head.nodeBefore.text?.substring($head.nodeBefore.text?.indexOf('/')).length ?? 0)
-            : $from.start()
-
-          const tr = state.tr.deleteRange(from, end)
-          view.dispatch(tr)
+          // const { view, state } = editor
+          // const { $head, $from } = view.state.selection
+          //
+          // const end = $from.pos
+          // const from = $head?.nodeBefore
+          //   ? end - ($head.nodeBefore.text?.substring($head.nodeBefore.text?.indexOf('/')).length ?? 0)
+          //   : $from.start()
+          //
+          // const tr = state.tr.deleteRange(from, end)
+          // view.dispatch(tr)
 
           props.action?.(editor)
           props.command?.({ editor, range })
 
-          view.focus()
+          // view.focus()
         },
       },
     }
@@ -67,7 +68,8 @@ const getSuggestionItems = ({ query, editor }: { query: string; editor: Editor }
   const suggestionItemsInExtensions = () => {
     const _extensions = editor?.extensionManager.extensions
     return _extensions?.reduce((acc, extension) => {
-      const _suggestion = extension.options.suggestion
+      const _suggestion = extension.options?.suggestion
+
       if (_suggestion && isArray(_suggestion.items)) {
         acc = acc.concat(_suggestion.items)
       }

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.tiptap p.is-empty::before {
+.ProseMirror p.is-empty::before {
   color: #adb5bd;
   content: attr(data-placeholder);
   float: left;
@@ -10,3 +10,45 @@
   pointer-events: none;
 }
 
+.ProseMirror [data-type='columns'] {
+  @apply grid gap-4 mt-14 mb-12;
+
+  &.layout-sidebar-left {
+    grid-template-columns: 40fr 60fr;
+  }
+
+  &.layout-sidebar-right {
+    grid-template-columns: 60fr 40fr;
+  }
+
+  &.layout-two-column {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ProseMirror [data-type=columns].has-focus [data-type=column],.ProseMirror [data-type=columns]:hover [data-type=column] {
+  --tw-border-opacity: 1;
+  border-color: rgb(212 212 212/var(--tw-border-opacity))
+}
+
+.ProseMirror [data-type=columns] [data-type=column].has-focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163/var(--tw-border-opacity))
+}
+
+.ProseMirror [data-type=column] {
+  border-radius: .25rem;
+  border: 2px dotted #0000;
+  padding: .25rem;
+  transition: border .16s cubic-bezier(.45,.05,.55,.95)
+}
+
+.ProseMirror [data-type=column]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245/var(--tw-border-opacity))
+}
+
+.ProseMirror [data-type=column].has-focus,.ProseMirror [data-type=column]:has(.is-active) {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245/var(--tw-border-opacity))
+}

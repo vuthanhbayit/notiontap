@@ -17,6 +17,9 @@ importers:
       '@tiptap/extension-color':
         specifier: ^2.2.3
         version: 2.2.3(@tiptap/core@2.2.3)(@tiptap/extension-text-style@2.2.3)
+      '@tiptap/extension-focus':
+        specifier: ^2.2.3
+        version: 2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3)
       '@tiptap/extension-highlight':
         specifier: ^2.2.3
         version: 2.2.3(@tiptap/core@2.2.3)
@@ -1146,6 +1149,16 @@ packages:
       '@tiptap/core': 2.2.3(@tiptap/pm@2.2.3)
       '@tiptap/pm': 2.2.3
       tippy.js: 6.3.7
+    dev: false
+
+  /@tiptap/extension-focus@2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3):
+    resolution: {integrity: sha512-hobBnlJUdbYuNKoxinv+xdTJmITl7ptmC20aT73HDX24/nP42Cf9wCc+5iXIRMRO3Ygat/U7FLHM+Qewot0orA==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.3(@tiptap/pm@2.2.3)
+      '@tiptap/pm': 2.2.3
     dev: false
 
   /@tiptap/extension-gapcursor@2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3):

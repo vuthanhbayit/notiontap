@@ -6,6 +6,7 @@
 
     <table-column-menu v-if="editor" :editor="editor"></table-column-menu>
     <table-row-menu v-if="editor" :editor="editor"></table-row-menu>
+    <columns-menu v-if="editor" :editor="editor"></columns-menu>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import TextMenu from '@/menus/text-menu/index.vue'
 import LinkMenu from '@/menus/link-menu/index.vue'
 import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
+import ColumnsMenu from '@/menus/columns-menu/index.vue'
 
 const modelValue = defineModel<string>({ required: true })
 

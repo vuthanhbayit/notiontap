@@ -12,8 +12,8 @@ export default Table.extend({
             searchTerms: ['table'],
             icon: 'i-ri-table-line',
             group: 'insert',
-            command: ({ editor }: CommandProps) => {
-              editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: false }).run()
+            command: ({ editor, range }: CommandProps) => {
+              editor.chain().focus().deleteRange(range).insertTable({ rows: 3, cols: 3, withHeaderRow: false }).run()
             },
           },
         ],

@@ -170,7 +170,6 @@ function DragHandle(options: DragHandleOptions) {
         },
         // dragging class is used for CSS
         dragstart: view => {
-          console.log('view.dom', view.dom)
           view.dom.classList.add('dragging')
         },
         drop: view => {

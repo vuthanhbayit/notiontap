@@ -1,8 +1,10 @@
 import StarterKit from '@tiptap/starter-kit'
 import { Underline } from '@tiptap/extension-underline'
+import { Document } from '@tiptap/extension-document'
 import { TextStyle } from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 import { Highlight } from '@tiptap/extension-highlight'
+import { FocusClasses as Focus } from '@tiptap/extension-focus'
 
 import TaskList from './task-list'
 import { TaskItem } from '@tiptap/extension-task-item'
@@ -17,10 +19,14 @@ import Link from './link'
 import OrderedList from './ordered-list'
 import Placeholder from './placeholder'
 import SlashCommand from './slash-command'
-
+import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
 
 const simpleExtensions = [
+  Document.extend({
+    content: '(block|columns)+',
+  }),
+  Focus,
   Blockquote,
   BulletList,
   CodeBlock,
@@ -40,6 +46,8 @@ const simpleExtensions = [
   TableCell,
   TableHeader,
   TableRow,
+  Columns,
+  Column,
   Highlight.configure({
     multicolor: true,
   }),
@@ -49,6 +57,7 @@ const simpleExtensions = [
       width: 4,
       color: '#DBEAFE',
     },
+    document: false,
     heading: false,
     orderedList: false,
     bulletList: false,

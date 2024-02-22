@@ -59,8 +59,6 @@ const handleEdit = () => {
 }
 
 const onSetLink = (state: { url: string; inNewTab: boolean }) => {
-  console.log('onSetLink', state)
-
   props.editor
     .chain()
     .focus()
