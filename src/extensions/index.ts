@@ -19,13 +19,14 @@ import Link from './link'
 import OrderedList from './ordered-list'
 import Placeholder from './placeholder'
 import SlashCommand from './slash-command'
+import Youtube from './youtube'
 import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
 import { TrailingNode } from './trailing-node'
 
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
-import { Figure, Figcaption } from '@/extensions/figure'
+import { Figure, Figcaption } from './figure'
 
 const simpleExtensions = [
   Document.extend({
@@ -57,6 +58,7 @@ const simpleExtensions = [
   Figure,
   Figcaption,
   TrailingNode,
+  Youtube,
   Highlight.configure({
     multicolor: true,
   }),
@@ -106,4 +108,6 @@ export {
   ImageUpload,
   Figure,
   Figcaption,
+  TrailingNode,
+  Youtube,
 }

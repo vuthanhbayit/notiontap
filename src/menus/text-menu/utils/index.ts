@@ -5,6 +5,7 @@ import { Table } from '@/extensions/table'
 import { ImageUpload } from '@/extensions/image-upload'
 import { ImageBlock } from '@/extensions/image-block'
 import { Figure, Figcaption } from '@/extensions/figure'
+import Youtube from '@/extensions/youtube'
 import { isTextSelection } from '@tiptap/core'
 import type { Editor } from '@tiptap/core'
 
@@ -31,6 +32,7 @@ export const isCustomNodeSelected = (editor: Editor, node: HTMLElement) => {
     ImageBlock.name,
     Figure.name,
     Figcaption.name,
+    Youtube.name,
   ]
 
   return customNodes.some(type => editor.isActive(type)) || isTableGripSelected(node)
