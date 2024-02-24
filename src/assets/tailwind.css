@@ -10,53 +10,46 @@
   pointer-events: none;
 }
 
-.ProseMirror [data-type='columns'] {
-  @apply grid gap-4 mt-14 mb-12;
-
-  &.layout-sidebar-left {
-    grid-template-columns: 40fr 60fr;
+.ProseMirror {
+  figure figcaption {
+    @apply m-0;
+    @apply text-sm;
   }
 
-  &.layout-sidebar-right {
-    grid-template-columns: 60fr 40fr;
+  figcaption.is-empty::before {
+    content: attr(placeholder);
+    pointer-events: none;
+    color: #adb5bd;
+    float: left;
+    height: 0;
   }
 
-  &.layout-two-column {
-    grid-template-columns: 1fr 1fr;
+  div[data-type="imageBlock"] {
+    @apply relative;
   }
-}
 
-.ProseMirror [data-type=columns].has-focus [data-type=column],.ProseMirror [data-type=columns]:hover [data-type=column] {
-  --tw-border-opacity: 1;
-  border-color: rgb(212 212 212/var(--tw-border-opacity))
-}
+  div[data-type="imageBlock"] img {
+    margin: 0;
+  }
 
-.ProseMirror [data-type=columns] [data-type=column].has-focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(163 163 163/var(--tw-border-opacity))
-}
+  div[data-type="imageBlock"] .add-caption-image {
+    @apply text-sm text-neutral-500;
+    @apply no-underline;
 
-.ProseMirror [data-type=column] {
-  border-radius: .25rem;
-  border: 2px dotted #0000;
-  padding: .25rem;
-  transition: border .16s cubic-bezier(.45,.05,.55,.95)
-}
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
 
-.ProseMirror [data-type=column]:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 245 245/var(--tw-border-opacity))
-}
+  div[data-type="imageBlock"]:hover .add-caption-image {
+    opacity: 1;
+  }
 
-.ProseMirror [data-type=column].has-focus,.ProseMirror [data-type=column]:has(.is-active) {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 245 245/var(--tw-border-opacity))
-}
-
-.ProseMirror [data-type=column]>:first-child {
-  margin-top: 0
-}
-
-.ProseMirror [data-type=column]>:last-child {
-  margin-bottom: 0
+  figure .add-caption-image {
+    display: none;
+  }
 }

@@ -13,3 +13,9 @@ export interface SuggestionItem {
   index?: number
   command: (props: CommandProps) => void
 }
+
+export interface SuggestionOptions {
+  suggestion: {
+    items: SuggestionItem[]
+  }
+}

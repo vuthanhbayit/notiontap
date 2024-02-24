@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.19",
+    "@pqina/filepond-plugin-image-editor": "^9.0.3",
     "@tiptap/core": "^2.2.3",
     "@tiptap/extension-color": "^2.2.3",
     "@tiptap/extension-focus": "^2.2.3",
@@ -66,7 +67,15 @@
     "@tiptap/starter-kit": "^2.2.3",
     "@tiptap/suggestion": "^2.2.3",
     "@tiptap/vue-3": "^2.2.3",
+    "@vt7/pintura": "^8.16.1",
     "@vt7/utils": "^5.2.1",
+    "@vueuse/core": "^10.8.0",
+    "filepond": "^4.30.6",
+    "filepond-plugin-file-poster": "^2.5.1",
+    "filepond-plugin-file-validate-size": "^2.2.8",
+    "filepond-plugin-file-validate-type": "^1.2.9",
+    "filepond-plugin-image-edit": "^1.6.3",
+    "filepond-plugin-image-preview": "^4.6.12",
     "vue-tippy": "^6.4.1"
   }
 }

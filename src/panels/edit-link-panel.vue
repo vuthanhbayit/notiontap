@@ -7,7 +7,7 @@
 
           <input
             v-model="state.url"
-            class="flex-1 bg-transparent outline-none min-w-[12rem] text-black text-sm dark:text-white"
+            class="flex-1 bg-transparent outline-none min-w-[12rem] text-black text-sm"
             placeholder="Enter URL"
             type="url"
           />

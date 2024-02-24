@@ -16,7 +16,7 @@ export interface TrailingNodeOptions {
   notAfter: string[]
 }
 
-export default Extension.create<TrailingNodeOptions>({
+export const TrailingNode = Extension.create<TrailingNodeOptions>({
   name: 'trailingNode',
 
   addOptions() {

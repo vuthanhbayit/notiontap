@@ -4,8 +4,9 @@ import tailwindCss from './assets/tailwind.css'
 import draggableCss from './assets/draggable.css'
 import tableCss from './assets/table.css'
 import taskListCss from './assets/task-list.css'
+import columnCss from './assets/column.css'
 
-NotionTap.styles = [tailwindCss, draggableCss, tableCss, taskListCss]
+NotionTap.styles = [tailwindCss, draggableCss, tableCss, taskListCss, columnCss]
 
 const NotionTapConstructor = defineCustomElement(NotionTap)
 

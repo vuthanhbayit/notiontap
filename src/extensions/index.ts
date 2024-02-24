@@ -21,6 +21,11 @@ import Placeholder from './placeholder'
 import SlashCommand from './slash-command'
 import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
+import { TrailingNode } from './trailing-node'
+
+import { ImageUpload } from './image-upload'
+import { ImageBlock } from './image-block'
+import { Figure, Figcaption } from '@/extensions/figure'
 
 const simpleExtensions = [
   Document.extend({
@@ -48,6 +53,10 @@ const simpleExtensions = [
   TableRow,
   Columns,
   Column,
+  ImageBlock,
+  Figure,
+  Figcaption,
+  TrailingNode,
   Highlight.configure({
     multicolor: true,
   }),
@@ -69,6 +78,8 @@ const simpleExtensions = [
 
 export {
   simpleExtensions,
+  Document,
+  Focus,
   Blockquote,
   BulletList,
   CodeBlock,
@@ -82,5 +93,17 @@ export {
   Underline,
   TaskList,
   TaskItem,
+  TextStyle,
   Color,
+  Table,
+  TableCell,
+  TableHeader,
+  TableRow,
+  Columns,
+  Column,
+  Highlight,
+  StarterKit,
+  ImageUpload,
+  Figure,
+  Figcaption,
 }

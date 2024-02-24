@@ -21,7 +21,7 @@
       >
         <template v-for="option in options">
           <div v-if="option.type === 'category'" :key="option.id" class="my-2 first:mt-0">
-            <span class="text-[.65rem] font-semibold uppercase text-neutral-500 dark:text-neutral-400 px-1.5">
+            <span class="text-[.65rem] font-semibold uppercase text-neutral-500 px-1.5">
               {{ option.label }}
             </span>
           </div>

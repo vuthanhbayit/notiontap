@@ -1,6 +1,6 @@
 import type { Editor } from '@tiptap/core'
 import type { EditorView } from 'prosemirror-view'
-import { isCustomNodeSelected, isTextSelected } from '@/utils'
+import { isCustomNodeSelected, isTextSelected } from '../utils'
 
 interface ShouldShow {
   view: EditorView

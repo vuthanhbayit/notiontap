@@ -1,17 +1,17 @@
-.tiptap ul[data-type=taskList],.prose ul[data-type=taskList] {
+.ProseMirror ul[data-type=taskList],.prose ul[data-type=taskList] {
     list-style-type: none;
     padding: 0
 }
 
-.tiptap ul[data-type=taskList] p,.prose ul[data-type=taskList] p {
+.ProseMirror ul[data-type=taskList] p,.prose ul[data-type=taskList] p {
     margin: 0
 }
 
-.tiptap ul[data-type=taskList] li,.prose ul[data-type=taskList] li {
+.ProseMirror ul[data-type=taskList] li,.prose ul[data-type=taskList] li {
     display: flex
 }
 
-.tiptap ul[data-type=taskList] li>label,.prose ul[data-type=taskList] li>label {
+.ProseMirror ul[data-type=taskList] li>label,.prose ul[data-type=taskList] li>label {
     margin-top: 0;
     margin-right: .5rem;
     flex: 1 1 auto;
@@ -21,12 +21,12 @@
     user-select: none
 }
 
-.tiptap ul[data-type=taskList] li>div,.prose ul[data-type=taskList] li>div {
+.ProseMirror ul[data-type=taskList] li>div,.prose ul[data-type=taskList] li>div {
     flex: 1 1 auto;
     margin: 0;
 }
 
-.tiptap ul[data-type=taskList] li[data-checked=true],.prose ul[data-type=taskList] li[data-checked=true] {
+.ProseMirror ul[data-type=taskList] li[data-checked=true],.prose ul[data-type=taskList] li[data-checked=true] {
     text-decoration-line: line-through
 }
 
