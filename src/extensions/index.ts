@@ -27,7 +27,7 @@ import { TrailingNode } from './trailing-node'
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
 import { Figure, Figcaption } from './figure'
-import { Bookmark, BookmarkInput } from './bookmark'
+import { Bookmark, BookmarkInput, type BookmarkInputOptions, type BookmarkAttribute } from './bookmark'
 import { WebComponent } from './web-component'
 
 const simpleExtensions = [
@@ -114,5 +114,7 @@ export {
   Youtube,
   Bookmark,
   BookmarkInput,
+  BookmarkInputOptions,
+  BookmarkAttribute,
   WebComponent,
 }

@@ -115,6 +115,7 @@
   @apply outline-0;
   @apply text-sm;
 
+  position: relative;
   white-space: pre-wrap;
   color: var(--tw-prose-pre-code);
   background-color: var(--tw-prose-pre-bg)

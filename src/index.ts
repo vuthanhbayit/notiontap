@@ -5,8 +5,9 @@ import draggableCss from './assets/draggable.css'
 import tableCss from './assets/table.css'
 import taskListCss from './assets/task-list.css'
 import columnCss from './assets/column.css'
+import uploadImageCss from './assets/upload-image.css'
 
-NotionTap.styles = [tailwindCss, draggableCss, tableCss, taskListCss, columnCss]
+NotionTap.styles = [tailwindCss, draggableCss, tableCss, taskListCss, columnCss, uploadImageCss]
 
 const NotionTapConstructor = defineCustomElement(NotionTap)
 
@@ -15,3 +16,4 @@ const register = () => {
 }
 
 export { NotionTap, register }
+export * from './extensions'

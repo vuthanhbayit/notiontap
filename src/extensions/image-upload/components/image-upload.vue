@@ -22,10 +22,6 @@ import {
 } from '@vt7/pintura'
 import { NodeViewProps } from '@/types'
 
-import '@vt7/pintura/pintura.css'
-import 'filepond/dist/filepond.css'
-import 'filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css'
-import 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css'
 import { ImageUploadOptions } from '@/extensions/image-upload/types'
 import { isFunction, isObject } from '@vt7/utils'
 
