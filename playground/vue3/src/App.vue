@@ -12,11 +12,42 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import NotionTap from '../../../src/notion-tap.vue'
-import { ImageUpload } from '../../../src/extensions'
+import { Bookmark, BookmarkInput, ImageUpload } from '../../../src/extensions'
+import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
 const content = ref('')
 
+const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {
+  return new Promise((resolve, reject) => {
+    fetch('https://lpdg-server.azurewebsites.net/parse/link', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ url }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        resolve(data)
+      })
+      .catch(error => reject(error))
+  })
+}
+
 const extensions = [
+  BookmarkInput.configure({
+    async getLinkPreview(url) {
+      const state = await loadUrlPreviewData(url)
+
+      return {
+        ...state,
+        src: url,
+      }
+    },
+  }),
+  Bookmark,
+
   ImageUpload.configure({
     filepondOptions: {
       name: 'file',

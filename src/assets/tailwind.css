@@ -53,3 +53,59 @@
     display: none;
   }
 }
+
+.notiontap-bookmark {
+  @apply border rounded;
+
+  & > a {
+    @apply hover:bg-neutral-50;
+  }
+
+  & > * {
+    @apply flex;
+  }
+
+  .notiontap-bookmark__item:first-child {
+    @apply px-4 py-2;
+    flex: 4 1 180px;
+  }
+
+  .notiontap-bookmark__item + .notiontap-bookmark__item {
+    flex: 1 1 180px;
+    position: relative;
+
+    & > img {
+      @apply absolute inset-0;
+      @apply h-full w-full;
+      @apply object-cover;
+    }
+  }
+
+  .notiontap-bookmark__title {
+    @apply text-base font-semibold;
+    @apply line-clamp-1;
+  }
+
+  .notiontap-bookmark__desc {
+    @apply mt-2;
+    @apply text-sm;
+    @apply line-clamp-2;
+  }
+
+  .notiontap-bookmark__url-wrapper {
+    @apply mt-2;
+    @apply flex items-center space-x-2;
+  }
+
+  .notiontap-bookmark__favicon-wrapper {
+    @apply w-4 h-4 relative;
+
+    & > * {
+      @apply absolute inset-0;
+    }
+  }
+
+  .notiontap-bookmark__src {
+    @apply text-sm flex-1 line-clamp-1;
+  }
+}

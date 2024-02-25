@@ -27,6 +27,7 @@ import { TrailingNode } from './trailing-node'
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
 import { Figure, Figcaption } from './figure'
+import { Bookmark, BookmarkInput } from './bookmark'
 
 const simpleExtensions = [
   Document.extend({
@@ -110,4 +111,6 @@ export {
   Figcaption,
   TrailingNode,
   Youtube,
+  Bookmark,
+  BookmarkInput,
 }
