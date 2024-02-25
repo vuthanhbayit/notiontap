@@ -28,6 +28,7 @@ import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
 import { Figure, Figcaption } from './figure'
 import { Bookmark, BookmarkInput } from './bookmark'
+import { WebComponent } from './web-component'
 
 const simpleExtensions = [
   Document.extend({
@@ -113,4 +114,5 @@ export {
   Youtube,
   Bookmark,
   BookmarkInput,
+  WebComponent,
 }

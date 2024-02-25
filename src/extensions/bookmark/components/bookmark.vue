@@ -66,6 +66,7 @@ debouncedWatch(
           props.updateAttributes(state)
         }
       } catch (e) {
+        console.log('getLinkPreview', { e })
       } finally {
         isFetching.value = false
       }

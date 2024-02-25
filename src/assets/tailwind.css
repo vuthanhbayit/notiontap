@@ -109,3 +109,25 @@
     @apply text-sm flex-1 line-clamp-1;
   }
 }
+
+.ProseMirror div[data-type="webComponent"] {
+  @apply px-8 pt-8 py-6 rounded-lg;
+  @apply outline-0;
+  @apply text-sm;
+
+  white-space: pre-wrap;
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg)
+}
+
+.ProseMirror div[data-type="webComponent"]::before {
+  @apply bg-neutral-400;
+  @apply text-neutral-900 text-xs font-semibold;
+
+  content: 'Web component';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  padding: 2px 4px;
+  border-radius: 0 0 4px 4px;
+}

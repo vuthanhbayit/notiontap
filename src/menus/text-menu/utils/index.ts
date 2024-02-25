@@ -6,6 +6,7 @@ import { ImageUpload } from '@/extensions/image-upload'
 import { ImageBlock } from '@/extensions/image-block'
 import { Figure, Figcaption } from '@/extensions/figure'
 import { Bookmark, BookmarkInput } from '@/extensions/bookmark'
+import { WebComponent } from '@/extensions/web-component'
 import Youtube from '@/extensions/youtube'
 import { isTextSelection } from '@tiptap/core'
 import type { Editor } from '@tiptap/core'
@@ -36,6 +37,7 @@ export const isCustomNodeSelected = (editor: Editor, node: HTMLElement) => {
     Youtube.name,
     Bookmark.name,
     BookmarkInput.name,
+    WebComponent.name,
   ]
 
   return customNodes.some(type => editor.isActive(type)) || isTableGripSelected(node)

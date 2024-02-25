@@ -12,8 +12,22 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('../../src', import.meta.url)),
+      vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
 
-  plugins: [dts(), vue({})],
+  plugins: [
+    dts(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => {
+            console.log('tag', tag)
+
+            return ['sku-view'].includes(tag)
+          },
+        },
+      },
+    }),
+  ],
 })
