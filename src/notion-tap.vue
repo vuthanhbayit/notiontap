@@ -33,8 +33,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const modelValue = defineModel<string>({ required: true })
 
-console.log('props.extensions', props.extensions)
-
 const editor = useEditor({
   content: modelValue.value,
 

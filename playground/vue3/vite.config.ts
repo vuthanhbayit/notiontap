@@ -22,8 +22,6 @@ export default defineConfig({
       template: {
         compilerOptions: {
           isCustomElement: tag => {
-            console.log('tag', tag)
-
             return ['sku-view'].includes(tag)
           },
         },
