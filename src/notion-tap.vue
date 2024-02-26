@@ -8,6 +8,7 @@
     <table-column-menu v-if="editor" :editor="editor"></table-column-menu>
     <table-row-menu v-if="editor" :editor="editor"></table-row-menu>
     <columns-menu v-if="editor" :editor="editor"></columns-menu>
+    <search-and-replace v-if="editor" :editor="editor"></search-and-replace>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import LinkMenu from '@/menus/link-menu/index.vue'
 import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'
+import SearchAndReplace from '@/menus/search-and-replace/index.vue'
 
 interface Props {
   extensions?: Extensions
@@ -49,3 +51,9 @@ const editor = useEditor({
   },
 })
 </script>
+
+<style>
+.notion-tap {
+  @apply relative;
+}
+</style>

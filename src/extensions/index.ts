@@ -29,6 +29,7 @@ import { ImageBlock } from './image-block'
 import { Figure, Figcaption } from './figure'
 import { Bookmark, BookmarkInput, type BookmarkInputOptions, type BookmarkAttribute } from './bookmark'
 import { WebComponent } from './web-component'
+import { SearchAndReplace } from '@/extensions/search-and-replace'
 
 const simpleExtensions = [
   Document.extend({
@@ -61,6 +62,7 @@ const simpleExtensions = [
   Figcaption,
   TrailingNode,
   Youtube,
+  SearchAndReplace,
   Highlight.configure({
     multicolor: true,
   }),

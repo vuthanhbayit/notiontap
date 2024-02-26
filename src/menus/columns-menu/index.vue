@@ -38,6 +38,10 @@ interface Props {
   editor: Editor
 }
 
+defineOptions({
+  name: 'ColumnsMenu',
+})
+
 const props = defineProps<Props>()
 
 const shouldShow = () => {

@@ -27,6 +27,13 @@
         :on-set-background="commands.onSetBackgroundColor"
         :on-set-color="commands.onSetColor"
       ></color-command>
+
+      <toolbar-button
+        :command="commands.onSetSearchAndReplace"
+        :shortcuts="['Mod', 'F', '&', 'Mod', 'R']"
+        icon="i-ri-search-line"
+        title="Search and Replace"
+      ></toolbar-button>
     </toolbar-wrapper>
   </bubble-menu>
 </template>
@@ -45,6 +52,10 @@ import { useStates, useCommands, useTypographyConfig, useToolbarCommandConfig } 
 interface Props {
   editor: Editor
 }
+
+defineOptions({
+  name: 'TextMenu',
+})
 
 const props = defineProps<Props>()
 

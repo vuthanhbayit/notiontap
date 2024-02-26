@@ -32,6 +32,10 @@ interface Props {
   editor: Editor
 }
 
+defineOptions({
+  name: 'LinkMenu',
+})
+
 const props = defineProps<Props>()
 
 const showEdit = ref(false)

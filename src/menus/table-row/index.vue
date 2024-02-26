@@ -46,6 +46,10 @@ interface Props {
   editor: Editor
 }
 
+defineOptions({
+  name: 'TableRowMenu',
+})
+
 const props = defineProps<Props>()
 
 const shouldShow = ({ view, state, from }: { view: EditorView; from: number; state: EditorState }): boolean => {

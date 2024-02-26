@@ -32,5 +32,10 @@ export const useCommands = (editor: Editor) => {
 
       editor.chain().focus().unsetHighlight().run()
     },
+    onSetSearchAndReplace: () => {
+      const { selection, doc } = editor.state
+      const text = doc.textBetween(selection.from, selection.to, ' ')
+      editor.commands.setSearchTerm(text)
+    },
   }
 }
