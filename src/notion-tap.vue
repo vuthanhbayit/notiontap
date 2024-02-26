@@ -52,6 +52,7 @@ const editor = useEditor({
 
 <style>
 .notion-tap {
-  @apply relative;
+  @apply relative bg-white;
+  @apply py-6;
 }
 </style>

@@ -1,6 +1,5 @@
 import StarterKit from '@tiptap/starter-kit'
 import { Underline } from '@tiptap/extension-underline'
-import { Document } from '@tiptap/extension-document'
 import { TextStyle } from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 import { Highlight } from '@tiptap/extension-highlight'
@@ -9,6 +8,7 @@ import { FocusClasses as Focus } from '@tiptap/extension-focus'
 import TaskList from './task-list'
 import { TaskItem } from '@tiptap/extension-task-item'
 
+import Document from './document'
 import Blockquote from './blockquote'
 import BulletList from './bullet-list'
 import CodeBlock from './code-block'
@@ -32,9 +32,7 @@ import { WebComponent } from './web-component'
 import { SearchAndReplace } from '@/extensions/search-and-replace'
 
 const simpleExtensions = [
-  Document.extend({
-    content: '(block|columns)+',
-  }),
+  Document,
   Focus,
   Blockquote,
   BulletList,
@@ -110,6 +108,7 @@ export {
   Highlight,
   StarterKit,
   ImageUpload,
+  ImageBlock,
   Figure,
   Figcaption,
   TrailingNode,
@@ -119,4 +118,5 @@ export {
   BookmarkInputOptions,
   BookmarkAttribute,
   WebComponent,
+  SearchAndReplace,
 }
