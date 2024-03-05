@@ -84,14 +84,15 @@
 </template>
 
 <script lang="ts" setup>
-import { Editor, isMacOS } from '@tiptap/core'
 import { computed, onMounted, ref, watch } from 'vue'
+import { Editor, isMacOS } from '@tiptap/core'
 import { onKeyStroke } from '@vueuse/core'
 import BaseTooltip from '@/components/base-tooltip.vue'
 import { SearchAndReplaceStorage } from '@/extensions/search-and-replace/types.ts'
 
 interface Props {
   editor: Editor
+  target: HTMLElement
 }
 
 defineOptions({
@@ -178,20 +179,20 @@ watch(shouldShow, (newValue, oldValue) => {
 })
 
 const onFocus = () => {
+  const document = props.editor.view.root
   const inputRef = document.querySelector('.search-and-replace input') as HTMLInputElement
 
   inputRef.focus()
 }
-const getTarget = () => {
-  return document.querySelector('.notion-tap') as HTMLElement
-}
 
 onMounted(() => {
-  const target = getTarget()
   const KEY_F = 70
   const KEY_R = 82
 
-  target.onkeydown = function (event) {
+  const _target = props.target
+
+  if (!_target) return
+  _target.onkeydown = function (event) {
     const meta = isMacOS() ? event.metaKey : event.ctrlKey
 
     if (meta && event.keyCode == KEY_F) {
@@ -222,29 +223,7 @@ onKeyStroke(
     clear()
   },
   {
-    target: getTarget,
+    target: props.target,
   },
 )
 </script>
-
-<style>
-.search-and-replace {
-  @apply fixed top-0 left-1/2;
-  @apply bg-neutral-100;
-
-  transform: translate(-50%, 0);
-
-  input {
-    @apply bg-neutral-100;
-    @apply outline-0;
-  }
-}
-
-.search-result {
-  background-color: rgba(255, 217, 0, 0.5);
-}
-
-.search-result-current {
-  background-color: rgba(255, 217, 0, 1);
-}
-</style>

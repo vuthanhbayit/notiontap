@@ -23,6 +23,7 @@ import Youtube from './youtube'
 import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
 import { TrailingNode } from './trailing-node'
+import Fullscreen from './fullscreen'
 
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
@@ -34,33 +35,22 @@ import { SearchAndReplace } from '@/extensions/search-and-replace'
 const simpleExtensions = [
   Document,
   Focus,
-  Blockquote,
-  BulletList,
-  CodeBlock,
   Draggable,
-  Heading,
   HorizontalRule,
-  OrderedList,
   Placeholder,
   SlashCommand,
-  Link,
-  Underline,
-  TaskList,
-  TaskItem,
   TextStyle,
-  Color,
   Table,
   TableCell,
   TableHeader,
   TableRow,
   Columns,
   Column,
-  ImageBlock,
   Figure,
   Figcaption,
   TrailingNode,
-  Youtube,
   SearchAndReplace,
+  Fullscreen,
   Highlight.configure({
     multicolor: true,
   }),
@@ -119,4 +109,5 @@ export {
   BookmarkAttribute,
   WebComponent,
   SearchAndReplace,
+  Fullscreen,
 }

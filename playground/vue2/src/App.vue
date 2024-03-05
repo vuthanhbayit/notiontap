@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { Bookmark, BookmarkInput, BookmarkAttribute, ImageUpload, WebComponent } from '../../../'
+import { Bookmark, BookmarkInput, BookmarkAttribute, ImageUpload, WebComponent, simpleExtensions } from '../../../'
 
 const content = ref('<p>I’m running Tiptap with Vue.js. 🎉</p>')
 
@@ -35,6 +35,7 @@ const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {
 }
 
 const extensions = [
+  ...simpleExtensions,
   WebComponent,
 
   BookmarkInput.configure({

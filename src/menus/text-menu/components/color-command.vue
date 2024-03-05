@@ -1,7 +1,9 @@
 <template>
   <menu-wrapper as="div" class="relative inline-block text-left">
     <base-tooltip title="Text color">
-      <menu-button class="toolbar-button w-auto">
+      <menu-button
+        class="flex items-center justify-center text-sm font-semibold rounded-md whitespace-nowrap disabled:opacity-50 text-neutral-500 hover:bg-black/5 hover:text-neutral-700 h-8 gap-1 min-w-[2rem] px-2 w-auto"
+      >
         <i class="w-4 h-4 i-ri-font-color"></i>
 
         <i class="w-4 h-4 i-ri-arrow-drop-down-line"></i>

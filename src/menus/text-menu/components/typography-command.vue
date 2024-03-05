@@ -1,7 +1,9 @@
 <template>
   <menu-wrapper as="div" class="relative inline-block text-left">
     <base-tooltip title="Turn into">
-      <menu-button class="toolbar-button w-auto">
+      <menu-button
+        class="flex items-center justify-center text-sm font-semibold rounded-md whitespace-nowrap disabled:opacity-50 text-neutral-500 hover:bg-black/5 hover:text-neutral-700 h-8 gap-1 min-w-[2rem] px-2 w-auto"
+      >
         <span class="text-sm font-medium">
           <span v-if="activatedOption">{{ activatedOption.label }}</span>
           <span v-else>Text</span>

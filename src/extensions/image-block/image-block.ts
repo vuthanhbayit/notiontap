@@ -12,17 +12,12 @@ declare module '@tiptap/core' {
   }
 }
 
-const findImage = (element: Element): Element | null => {
-  if (element.tagName === 'IMG') {
-    return element
-  }
-
-  const _images = element.getElementsByTagName('img')
-
-  return _images && _images.length ? _images[0] : null
+interface Options {
+  HTMLAttributes: Record<string, any>
+  findImage: (element: Element) => Element | null
 }
 
-export const ImageBlock = Image.extend({
+export const ImageBlock = Image.extend<Options>({
   name: 'imageBlock',
 
   group: 'block',
@@ -31,7 +26,22 @@ export const ImageBlock = Image.extend({
 
   isolating: true,
 
+  addOptions() {
+    return {
+      HTMLAttributes: {},
+      findImage: (element: Element): Element | null => {
+        if (element.getAttribute('data-type') === 'imageBlock') {
+          return element.getElementsByTagName('img')?.[0]
+        }
+
+        return element
+      },
+    }
+  },
+
   addAttributes() {
+    const findImage = this.options.findImage
+
     return {
       src: {
         default: '',
@@ -62,10 +72,7 @@ export const ImageBlock = Image.extend({
   },
 
   parseHTML() {
-    return [
-      { tag: `div[data-type="${this.name}"]` },
-      { tag: this.options.allowBase64 ? 'img[src]' : 'img[src]:not([src^="data:"])' },
-    ]
+    return [{ tag: `div[data-type="${this.name}"]` }, { tag: 'img[src]' }]
   },
 
   renderHTML({ HTMLAttributes }) {

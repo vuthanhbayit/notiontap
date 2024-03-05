@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import NotionTap from '../../../src/notion-tap.vue'
-import { Bookmark, BookmarkInput, ImageUpload } from '../../../src/extensions'
+import { Bookmark, BookmarkInput, ImageUpload, simpleExtensions } from '../../../src/extensions'
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
 const content = ref('')
@@ -34,6 +34,7 @@ const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {
 }
 
 const extensions = [
+  ...simpleExtensions,
   BookmarkInput.configure({
     async getLinkPreview(url) {
       const state = await loadUrlPreviewData(url)

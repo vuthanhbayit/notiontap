@@ -1,5 +1,5 @@
 <template>
-  <div class="notion-tap">
+  <div ref="notionTapRef" class="notion-tap">
     <editor-content v-if="editor" :editor="editor" class="notion-tap__content"></editor-content>
 
     <text-menu v-if="editor" :editor="editor"></text-menu>
@@ -8,20 +8,20 @@
     <table-column-menu v-if="editor" :editor="editor"></table-column-menu>
     <table-row-menu v-if="editor" :editor="editor"></table-row-menu>
     <columns-menu v-if="editor" :editor="editor"></columns-menu>
-    <search-and-replace v-if="editor" :editor="editor"></search-and-replace>
+    <search-and-replace v-if="editor" :editor="editor" :target="notionTapRef"></search-and-replace>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import type { Extensions } from '@tiptap/core'
-import { simpleExtensions } from '@/extensions'
 import TextMenu from '@/menus/text-menu/index.vue'
 import LinkMenu from '@/menus/link-menu/index.vue'
 import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'
 import SearchAndReplace from '@/menus/search-and-replace/index.vue'
+import { ref } from 'vue'
 
 interface Props {
   extensions?: Extensions
@@ -36,7 +36,7 @@ const modelValue = defineModel<string>({ required: true })
 const editor = useEditor({
   content: modelValue.value,
 
-  extensions: [...simpleExtensions, ...props.extensions],
+  extensions: props.extensions,
 
   onUpdate: ({ editor }) => {
     modelValue.value = editor.getHTML()
@@ -48,11 +48,6 @@ const editor = useEditor({
     },
   },
 })
-</script>
 
-<style>
-.notion-tap {
-  @apply relative bg-white;
-  @apply py-6;
-}
-</style>
+const notionTapRef = ref<HTMLElement | null>(null)
+</script>
