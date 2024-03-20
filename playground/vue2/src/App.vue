@@ -36,6 +36,7 @@ const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {
 
 const extensions = [
   ...simpleExtensions,
+
   WebComponent,
 
   BookmarkInput.configure({
