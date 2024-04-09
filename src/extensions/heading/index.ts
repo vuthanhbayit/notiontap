@@ -34,6 +34,15 @@ export default Heading.extend({
               editor.chain().focus().deleteRange(range).setNode('heading', { level: 3 }).run()
             },
           },
+          {
+            title: 'Heading 4',
+            searchTerms: ['subtitle', 'small', 'h4'],
+            icon: 'i-ri-h-4',
+            group: 'hierarchy',
+            command: ({ editor, range }: CommandProps) => {
+              editor.chain().focus().deleteRange(range).setNode('heading', { level: 4 }).run()
+            },
+          },
         ],
       },
     }

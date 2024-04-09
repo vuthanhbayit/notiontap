@@ -28,7 +28,8 @@
     }
 
     th {
-      @apply font-bold;
+      @apply font-bold ;
+      @apply bg-slate-100;
     }
 
     .column-resize-handle {
@@ -42,7 +43,11 @@
     }
 
     .selectedCell {
-      @apply bg-black/5 border-black/20 border-double;
+      @apply bg-gray-50 border-black/20 border-double;
+    }
+
+    th.selectedCell {
+      @apply bg-gray-200;
     }
 
     .grip-column,

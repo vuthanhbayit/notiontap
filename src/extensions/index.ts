@@ -60,7 +60,6 @@ const simpleExtensions = [
   TaskList,
   TaskItem,
   Color,
-  Highlight,
   Youtube,
   TableOfContents,
   Highlight.configure({

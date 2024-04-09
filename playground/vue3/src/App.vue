@@ -23,7 +23,7 @@ import {
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
 const content = ref(
-  '<div data-type="tableOfContents"><a href="#zeGrb" class="zeGrb" data-type="toc-anchor" data-level="1" data-origin-level="1" data-index="0">heading 1</a><a href="#hO9eZ" class="hO9eZ" data-type="toc-anchor" data-level="2" data-origin-level="3" data-index="1">heading 3</a><a href="#iy2A7" class="iy2A7" data-type="toc-anchor" data-level="2" data-origin-level="2" data-index="2">heading 2</a></div><h1 id="zeGrb" data-toc-id="zeGrb">heading 1</h1><h3 id="hO9eZ" data-toc-id="hO9eZ">heading 3</h3><h2 id="iy2A7" data-toc-id="iy2A7">heading 2</h2><p></p>',
+  '<p></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/"><div data-type="imageBlock"><img src="https://media-api-staging.thinkpro.vn/media/core/products/2024/4/8/38-536x354.jpeg" data-width="100%" data-align="center" loading="lazy"></div></a></p><p></p><p></p>',
 )
 
 const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {

@@ -5,6 +5,7 @@
     <text-menu v-if="editor" :editor="editor"></text-menu>
     <link-menu v-if="editor" :editor="editor"></link-menu>
 
+    <table-menu v-if="editor" :editor="editor"></table-menu>
     <table-column-menu v-if="editor" :editor="editor"></table-column-menu>
     <table-row-menu v-if="editor" :editor="editor"></table-row-menu>
     <columns-menu v-if="editor" :editor="editor"></columns-menu>
@@ -17,6 +18,7 @@ import { useEditor, EditorContent } from '@tiptap/vue-3'
 import type { Extensions } from '@tiptap/core'
 import TextMenu from '@/menus/text-menu/index.vue'
 import LinkMenu from '@/menus/link-menu/index.vue'
+import TableMenu from '@/menus/table/index.vue'
 import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'

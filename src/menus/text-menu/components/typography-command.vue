@@ -57,8 +57,8 @@
 
 <script lang="ts" setup>
 import { Menu as MenuWrapper, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import type { TypographyOptions } from '../types'
 import { computed } from 'vue'
+import type { TypographyOptions } from '../types'
 import BaseTooltip from '@/components/base-tooltip.vue'
 
 interface Props {

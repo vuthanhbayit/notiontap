@@ -5,30 +5,30 @@
     :should-show="shouldShow"
     :tippyOptions="{
       duration: 100,
-      offset: [0, 15],
-      placement: 'left',
+      offset: [0, 10],
+      placement: 'top-start',
       popperOptions: {
         modifiers: [{ name: 'flip', enabled: false }],
       },
     }"
     plugin-key="table-row-menu"
   >
-    <toolbar-wrapper is-vertical>
-      <base-button class="inline-flex space-x-2 items-center" @click="onAddRowBefore">
-        <i class="w-4 h-4 i-ri-insert-row-top"></i>
-
-        <span>Add row before</span>
-      </base-button>
-      <base-button class="inline-flex space-x-2 items-center" @click="onAddRowAfter">
-        <i class="w-4 h-4 i-ri-insert-row-bottom"></i>
-
-        <span>Add row after</span>
-      </base-button>
-      <base-button class="inline-flex space-x-2 items-center" @click="onDeleteRow">
-        <i class="w-4 h-4 i-ri-delete-row"></i>
-
-        <span>Delete row</span>
-      </base-button>
+    <toolbar-wrapper>
+      <base-tooltip title="Add a row to top">
+        <base-button class="inline-flex space-x-2 items-center" @click="onAddRowBefore">
+          <i class="w-4 h-4 i-ri-insert-row-top"></i>
+        </base-button>
+      </base-tooltip>
+      <base-tooltip title="Add a row to bottom">
+        <base-button class="inline-flex space-x-2 items-center" @click="onAddRowAfter">
+          <i class="w-4 h-4 i-ri-insert-row-bottom"></i>
+        </base-button>
+      </base-tooltip>
+      <base-tooltip title="Delete this row">
+        <base-button class="inline-flex space-x-2 items-center" @click="onDeleteRow">
+          <i class="w-4 h-4 i-ri-delete-row"></i>
+        </base-button>
+      </base-tooltip>
     </toolbar-wrapper>
   </bubble-menu>
 </template>
@@ -41,6 +41,7 @@ import type { EditorState } from 'prosemirror-state'
 import { isRowGripSelected } from './utils.ts'
 import ToolbarWrapper from '@/components/toolbar-wrapper.vue'
 import BaseButton from '@/components/base-button.vue'
+import BaseTooltip from '@/components/base-tooltip.vue'
 
 interface Props {
   editor: Editor

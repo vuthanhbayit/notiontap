@@ -26,7 +26,7 @@ export const Figure = Node.create<FigureOptions>({
 
   group: 'block',
 
-  content: 'imageBlock figcaption',
+  content: 'block figcaption',
 
   draggable: true,
 
