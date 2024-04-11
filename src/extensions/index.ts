@@ -120,6 +120,7 @@ export {
   Bookmark,
   BookmarkInput,
   WebComponent,
+  SourceCode,
   type BookmarkInputOptions,
   type BookmarkAttribute,
 }
