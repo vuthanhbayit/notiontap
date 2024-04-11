@@ -1,6 +1,6 @@
 {
   "name": "notion-tap",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Notion like editor built on top of Tiptap and Vue 3.",
   "keywords": [
     "notion",

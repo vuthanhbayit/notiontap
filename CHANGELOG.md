@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Export source code ([fe7870a](https://github.com/vuthanhbayit/notiontap/commit/fe7870a))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.2...v0.0.3)
