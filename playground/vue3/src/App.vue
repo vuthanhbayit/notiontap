@@ -23,7 +23,7 @@ import {
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
 const content = ref(
-  '<p></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/"><div data-type="imageBlock"><img src="https://media-api-staging.thinkpro.vn/media/core/products/2024/4/8/38-536x354.jpeg" data-width="100%" data-align="center" loading="lazy"></div></a></p><p></p><p></p>',
+  '<div data-type="imageBlock"><img src="https://media-api-staging.thinkpro.vn/media/core/products/2024/4/8/38-536x354.jpeg" data-width="100%" data-align="center" alt="xxxxxxx" loading="lazy"></div><p>zzzzz</p><p></p>',
 )
 
 const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {

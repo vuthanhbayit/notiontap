@@ -24,6 +24,7 @@ import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
 import { TrailingNode } from './trailing-node'
 import Fullscreen from './fullscreen'
+import SourceCode from './source-code'
 
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
@@ -62,6 +63,7 @@ const simpleExtensions = [
   Color,
   Youtube,
   TableOfContents,
+  SourceCode,
   Highlight.configure({
     multicolor: true,
   }),

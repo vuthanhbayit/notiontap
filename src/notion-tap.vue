@@ -10,10 +10,15 @@
     <table-row-menu v-if="editor" :editor="editor"></table-row-menu>
     <columns-menu v-if="editor" :editor="editor"></columns-menu>
     <search-and-replace v-if="editor" :editor="editor" :target="notionTapRef"></search-and-replace>
+
+    <modal-source-code v-if="editor" :editor="editor"></modal-source-code>
+
+    <slot name="append"></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import type { Extensions } from '@tiptap/core'
 import TextMenu from '@/menus/text-menu/index.vue'
@@ -23,7 +28,7 @@ import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'
 import SearchAndReplace from '@/menus/search-and-replace/index.vue'
-import { ref } from 'vue'
+import ModalSourceCode from '@/components/modal-source-code.vue'
 
 interface Props {
   extensions?: Extensions
