@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.2...v0.0.3)
+
+### 🚀 Enhancements
+
+- Source code ([3e6dd9f](https://github.com/vuthanhbayit/notiontap/commit/3e6dd9f))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.2
 
 
