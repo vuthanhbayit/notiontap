@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Add alt for image block ([a846a99](https://github.com/vuthanhbayit/notiontap/commit/a846a99))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.4...v0.0.5)
