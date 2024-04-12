@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.6...v0.0.7)
+
+### 🚀 Enhancements
+
+- Text align ([1079f23](https://github.com/vuthanhbayit/notiontap/commit/1079f23))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.5...v0.0.6)
