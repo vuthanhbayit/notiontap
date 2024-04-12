@@ -50,13 +50,6 @@ export const useToolbarCommandConfig = (editor: Editor) => {
         icon: 'i-ri-code-box-line',
         title: 'Code Block',
       },
-      {
-        command: commands.onCodeBlock,
-        isActive: states.isCodeBlock,
-        shortcuts: ['Mod', 'Alt', 'c'],
-        icon: 'i-ri-code-box-line',
-        title: 'Code Block',
-      },
     ]
   })
 
