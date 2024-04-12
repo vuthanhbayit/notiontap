@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Duplicate code block ([feee59c](https://github.com/vuthanhbayit/notiontap/commit/feee59c))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.6...v0.0.7)
