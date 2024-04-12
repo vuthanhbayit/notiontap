@@ -2,6 +2,8 @@ import { Youtube } from '@tiptap/extension-youtube'
 import type { CommandProps } from '@/extensions/slash-command/types.ts'
 
 export default Youtube.extend({
+  textMenu: false,
+
   addOptions() {
     return {
       ...this.parent?.(),

@@ -26,6 +26,8 @@ export const ImageBlock = Image.extend<Options>({
 
   isolating: true,
 
+  textMenu: false,
+
   addOptions() {
     return {
       HTMLAttributes: {},

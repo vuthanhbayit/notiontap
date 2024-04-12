@@ -31,6 +31,8 @@ export const Bookmark = Node.create({
 
   selectable: true,
 
+  textMenu: false,
+
   addAttributes() {
     return {
       src: {

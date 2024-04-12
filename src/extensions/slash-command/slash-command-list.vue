@@ -20,7 +20,9 @@
             @click="selectItem(item)"
           >
             <span class="flex items-center justify-center w-6 h-6 bg-white border rounded-md border-stone-200">
-              <i :class="item.icon" class="w-4 h-4"></i>
+              <i v-if="typeof item.icon === 'string'" :class="item.icon" class="w-4 h-4"></i>
+
+              <component v-else :is="item.icon" class="w-4 h-4"></component>
             </span>
 
             <span class="font-medium">{{ item.title }}</span>

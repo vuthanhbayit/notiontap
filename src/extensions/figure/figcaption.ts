@@ -19,6 +19,8 @@ export const Figcaption = Node.create({
 
   draggable: false,
 
+  textMenu: false,
+
   parseHTML() {
     return [{ tag: 'figcaption' }]
   },

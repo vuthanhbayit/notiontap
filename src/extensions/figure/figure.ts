@@ -32,6 +32,8 @@ export const Figure = Node.create<FigureOptions>({
 
   isolating: true,
 
+  textMenu: false,
+
   parseHTML() {
     return [{ tag: `figure[data-type="${this.name}"]` }]
   },

@@ -3,6 +3,8 @@ import { InputRule } from '@tiptap/core'
 import type { CommandProps } from '@/extensions/slash-command/types.ts'
 
 export default HorizontalRule.extend({
+  textMenu: false,
+
   addOptions() {
     return {
       ...this.parent?.(),

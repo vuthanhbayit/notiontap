@@ -2,6 +2,8 @@ import { Table } from '@tiptap/extension-table'
 import type { CommandProps } from '@/extensions/slash-command/types'
 
 export default Table.extend({
+  textMenu: false,
+
   addOptions() {
     return {
       ...this.parent?.(),

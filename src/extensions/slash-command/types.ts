@@ -7,7 +7,7 @@ export interface CommandProps {
 
 export interface SuggestionItem {
   title: string
-  icon: string
+  icon: any
   searchTerms: string[]
   group: 'hierarchy' | 'format' | 'insert' | 'other' | string
   index?: number

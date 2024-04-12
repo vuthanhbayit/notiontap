@@ -2,6 +2,8 @@ import { CodeBlock } from '@tiptap/extension-code-block'
 import type { CommandProps } from '@/extensions/slash-command/types.ts'
 
 export default CodeBlock.extend({
+  textMenu: false,
+
   addOptions() {
     return {
       ...this.parent?.(),

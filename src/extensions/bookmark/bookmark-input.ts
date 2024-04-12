@@ -30,6 +30,8 @@ export const BookmarkInput = Node.create<BookmarkInputOptions>({
 
   inline: false,
 
+  textMenu: false,
+
   addOptions() {
     return {
       suggestion: {

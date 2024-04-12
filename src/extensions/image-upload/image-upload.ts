@@ -26,6 +26,8 @@ export const ImageUpload = Node.create<ImageUploadOptions, any>({
 
   inline: false,
 
+  textMenu: false,
+
   addOptions() {
     return {
       suggestion: {

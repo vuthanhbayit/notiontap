@@ -22,6 +22,8 @@ export const WebComponent = Node.create<SuggestionOptions>({
 
   selectable: true,
 
+  textMenu: false,
+
   addAttributes() {
     return {
       content: {

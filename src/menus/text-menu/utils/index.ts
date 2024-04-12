@@ -1,13 +1,3 @@
-import CodeBlock from '@tiptap/extension-code-block'
-import HorizontalRule from '@/extensions/horizontal'
-import Link from '@/extensions/link'
-import { Table } from '@/extensions/table'
-import { ImageUpload } from '@/extensions/image-upload'
-import { ImageBlock } from '@/extensions/image-block'
-import { Figure, Figcaption } from '@/extensions/figure'
-import { Bookmark, BookmarkInput } from '@/extensions/bookmark'
-import { WebComponent } from '@/extensions/web-component'
-import Youtube from '@/extensions/youtube'
 import { isTextSelection } from '@tiptap/core'
 import type { Editor } from '@tiptap/core'
 
@@ -25,22 +15,13 @@ export const isTableGripSelected = (node: HTMLElement) => {
 }
 
 export const isCustomNodeSelected = (editor: Editor, node: HTMLElement) => {
-  const customNodes = [
-    HorizontalRule.name,
-    CodeBlock.name,
-    Link.name,
-    Table.name,
-    ImageUpload.name,
-    ImageBlock.name,
-    Figure.name,
-    Figcaption.name,
-    Youtube.name,
-    Bookmark.name,
-    BookmarkInput.name,
-    WebComponent.name,
-  ]
+  const disabledTextMenuExtensions = editor.extensionManager.extensions
+    .filter(extension => {
+      return extension.config.textMenu === false
+    })
+    .map(extension => extension.name)
 
-  return customNodes.some(type => editor.isActive(type)) || isTableGripSelected(node)
+  return disabledTextMenuExtensions.some(type => editor.isActive(type)) || isTableGripSelected(node)
 }
 
 export const isTextSelected = ({ editor }: { editor: Editor }) => {
