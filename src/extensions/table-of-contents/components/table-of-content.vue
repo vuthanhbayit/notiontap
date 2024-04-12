@@ -1,7 +1,7 @@
 <template>
   <node-view-wrapper>
     <div data-type="tableOfContents">
-      <span class="text-xs">Table of contents</span>
+      <span class="text-base font-semibold inline-block mb-2">Table of contents</span>
 
       <template v-if="contents.length">
         <span

@@ -28,8 +28,13 @@
     height: 0;
   }
 
+  figure div[data-type="imageBlock"] {
+    @apply mb-0;
+  }
+
   div[data-type="imageBlock"] {
     @apply relative;
+    @apply mb-8;
   }
 
   div[data-type="imageBlock"] img {
@@ -161,10 +166,10 @@
 
 .notion-tap div[data-type="tableOfContents"] {
   @apply flex flex-col;
-  @apply text-base;
+  @apply text-base bg-gray-50 p-4 rounded;
 
   .toc-anchor {
     @apply py-1 px-3;
-    @apply hover:bg-gray-50 rounded;
+    @apply hover:bg-gray-200 rounded;
   }
 }

@@ -1,5 +1,7 @@
 import { mergeAttributes, Range } from '@tiptap/core'
 import { Image } from '@tiptap/extension-image'
+import { VueNodeViewRenderer } from '@tiptap/vue-3'
+import ImageBlockComponent from './components/image-block.vue'
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
@@ -111,36 +113,6 @@ export const ImageBlock = Image.extend<Options>({
   },
 
   addNodeView() {
-    return ({ HTMLAttributes, editor }) => {
-      const wrapper = document.createElement('div')
-      wrapper.setAttribute('data-type', this.name)
-
-      const image = document.createElement('img')
-      const imageAttrs = mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)
-
-      for (const key in imageAttrs) {
-        image.setAttribute(key, imageAttrs[key])
-      }
-
-      const addCaptionBtn = document.createElement('a')
-      addCaptionBtn.innerText = 'Add caption'
-      addCaptionBtn.className = 'add-caption-image'
-      addCaptionBtn.addEventListener('click', () => {
-        editor.chain().focus().imageToFigure().run()
-      })
-
-      wrapper.append(image)
-      wrapper.append(addCaptionBtn)
-
-      return {
-        dom: wrapper,
-        contentDOM: image,
-        update: updatedNode => {
-          if (updatedNode.type !== this.type) return false
-
-          return true
-        },
-      }
-    }
+    return VueNodeViewRenderer(ImageBlockComponent)
   },
 })
