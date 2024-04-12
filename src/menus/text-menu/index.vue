@@ -9,6 +9,8 @@
     <toolbar-wrapper>
       <typography-command :options="typographyOptions"></typography-command>
 
+      <align-command :options="alignOptions"></align-command>
+
       <toolbar-button
         v-for="(command, index) in toolbarCommands"
         :key="index"
@@ -47,7 +49,8 @@ import ToolbarButton from '@/components/toolbar-button.vue'
 import LinkCommand from './components/link-command.vue'
 import TypographyCommand from './components/typography-command.vue'
 import ColorCommand from './components/color-command.vue'
-import { useStates, useCommands, useTypographyConfig, useToolbarCommandConfig } from './composables'
+import AlignCommand from './components/align-command.vue'
+import { useStates, useCommands, useTypographyConfig, useToolbarCommandConfig, useAlignConfig } from './composables'
 
 interface Props {
   editor: Editor
@@ -63,4 +66,5 @@ const states = useStates(props.editor)
 const commands = useCommands(props.editor)
 const { typographyOptions } = useTypographyConfig(props.editor)
 const { toolbarCommands } = useToolbarCommandConfig(props.editor)
+const { alignOptions } = useAlignConfig(props.editor)
 </script>
