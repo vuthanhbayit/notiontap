@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- Update text menu logic ([f6c0b8b](https://github.com/vuthanhbayit/notiontap/commit/f6c0b8b))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.3...v0.0.4)
