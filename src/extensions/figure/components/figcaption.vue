@@ -4,6 +4,7 @@
       ref="target"
       :class="{ [extension.options.emptyNodeClass]: isEmpty }"
       :placeholder="extension.options.placeholder"
+      v-bind="extension.options.HTMLAttributes"
     >
       <node-view-content></node-view-content>
     </figcaption>
@@ -19,6 +20,7 @@ const props = defineProps<
   NodeViewProps<{
     placeholder: string
     emptyNodeClass: string
+    HTMLAttributes: any
   }>
 >()
 

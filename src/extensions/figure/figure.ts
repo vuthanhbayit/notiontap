@@ -32,8 +32,6 @@ export const Figure = Node.create<FigureOptions>({
 
   isolating: true,
 
-  textMenu: false,
-
   parseHTML() {
     return [{ tag: `figure[data-type="${this.name}"]` }]
   },
@@ -76,6 +74,7 @@ export const Figure = Node.create<FigureOptions>({
                   attrs: {
                     placeholder: 'Write a caption…',
                   },
+                  content: [{ type: 'paragraph' }],
                 },
               ],
             })

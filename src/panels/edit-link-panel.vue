@@ -30,13 +30,28 @@
           />
         </Switch>
       </div>
+
+      <div class="mt-4 flex space-x-2">
+        <div v-for="item in rels" :key="item.id" class="flex items-center mb-4">
+          <input
+            :id="'rel-' + item.id"
+            v-model="state.rel"
+            :value="item.id"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 outline-0"
+            type="checkbox"
+          />
+          <label :for="'rel-' + item.id" class="ms-2 text-sm text-gray-900">
+            {{ item.name }}
+          </label>
+        </div>
+      </div>
     </form>
   </surface>
 </template>
 
 <script lang="ts" setup>
 import { Switch } from '@headlessui/vue'
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive } from 'vue'
 
 import Surface from '@/components/surface.vue'
 import BaseButton from '@/components/base-button.vue'
@@ -44,12 +59,14 @@ import BaseButton from '@/components/base-button.vue'
 interface Props {
   initialUrl?: string
   initialOpenInNewTab?: boolean
+  initialRel?: string
   onSetLink: (state: { url: string; inNewTab: boolean }) => void
 }
 
 const props = withDefaults(defineProps<Props>(), {
   initialUrl: '',
   initialOpenInNewTab: false,
+  initialRel: 'nofollow noopener noreferrer',
 })
 
 const emit = defineEmits(['on-set-link'])
@@ -57,7 +74,14 @@ const emit = defineEmits(['on-set-link'])
 const state = reactive({
   url: props.initialUrl,
   inNewTab: props.initialOpenInNewTab,
+  rel: props.initialRel.split(' '),
 })
+
+const rels = [
+  { name: 'NoFollow', id: 'nofollow' },
+  { name: 'NoOpener', id: 'noopener' },
+  { name: 'NoReferrer', id: 'noreferrer' },
+]
 
 const REGEX_VALID_URL = /^(\S+):(\/\/)?\S+$/
 const isValidUrl = computed(() => REGEX_VALID_URL.test(state.url))

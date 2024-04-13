@@ -8,11 +8,11 @@ export const useCommands = (editor: Editor) => {
     onStrike: () => editor.chain().focus().toggleStrike().run(),
     onCode: () => editor.chain().focus().toggleCode().run(),
     onCodeBlock: () => editor.chain().focus().toggleCodeBlock().run(),
-    onLink: (state: { url: string; inNewTab: boolean }) =>
+    onLink: (state: { url: string; inNewTab: boolean; rel: string[] }) =>
       editor
         .chain()
         .focus()
-        .setLink({ href: state.url, target: state.inNewTab ? '_blank' : '' })
+        .setLink({ href: state.url, target: state.inNewTab ? '_blank' : '', rel: state.rel.join(' ') })
         .run(),
     onSetColor: (color: string) => {
       editor.chain().focus().unsetHighlight().run()

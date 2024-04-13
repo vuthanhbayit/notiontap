@@ -7,26 +7,26 @@ export const Figcaption = Node.create({
 
   addOptions() {
     return {
-      HTMLAttributes: {},
+      HTMLAttributes: {
+        class: 'not-prose',
+      },
       emptyNodeClass: 'is-empty',
       placeholder: 'Write a caption ...',
     }
   },
 
-  content: 'text*',
+  content: 'block',
 
   selectable: true,
 
   draggable: false,
-
-  textMenu: false,
 
   parseHTML() {
     return [{ tag: 'figcaption' }]
   },
 
   renderHTML({ HTMLAttributes }) {
-    return ['figcaption', mergeAttributes(HTMLAttributes), 0]
+    return ['figcaption', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0]
   },
 
   addNodeView: () => {
