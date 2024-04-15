@@ -66,7 +66,6 @@ const simpleExtensions = [
   TaskItem,
   Color,
   Youtube,
-  TableOfContents,
   SourceCode,
   Highlight.configure({
     multicolor: true,
@@ -126,6 +125,7 @@ export {
   BookmarkInput,
   WebComponent,
   SourceCode,
+  TableOfContents,
   type BookmarkInputOptions,
   type BookmarkAttribute,
 }
