@@ -116,6 +116,7 @@ export {
   TaskItem,
   Color,
   Highlight,
+  StarterKit,
   Youtube,
   ImageUpload,
   ImageBlock,
