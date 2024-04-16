@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.10...v0.0.11)
+
+### 🏡 Chore
+
+- Export starterKit ([2776e1f](https://github.com/vuthanhbayit/notiontap/commit/2776e1f))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.9...v0.0.10)
