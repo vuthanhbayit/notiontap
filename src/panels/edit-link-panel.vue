@@ -37,7 +37,7 @@
             :id="'rel-' + item.id"
             v-model="state.rel"
             :value="item.id"
-            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 outline-0"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded outline-0"
             type="checkbox"
           />
           <label :for="'rel-' + item.id" class="ms-2 text-sm text-gray-900">
@@ -66,7 +66,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   initialUrl: '',
   initialOpenInNewTab: false,
-  initialRel: 'nofollow noopener noreferrer',
+  initialRel: '',
 })
 
 const emit = defineEmits(['on-set-link'])

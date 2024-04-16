@@ -8,9 +8,10 @@
   >
     <edit-link-panel
       v-if="showEdit"
+      :key="state.link"
       :initial-open-in-new-tab="state.target === '_blank'"
-      :initial-url="state.link"
       :initial-rel="state.rel"
+      :initial-url="state.link"
       :on-set-link="onSetLink"
     ></edit-link-panel>
     <preview-link-panel
@@ -45,13 +46,23 @@ const shouldShow = () => {
   return props.editor.isActive('link')
 }
 
-const state = computed(() => {
-  const { href, target, rel } = props.editor.getAttributes('link')
+const state = ref({
+  link: '',
+  target: '',
+  rel: '',
+})
 
-  return {
-    link: href,
-    target,
-    rel,
+props.editor.on('selectionUpdate', () => {
+  if (props.editor.isActive('link')) {
+    const { href, target, rel } = props.editor.getAttributes('link')
+
+    state.value = {
+      link: href,
+      target,
+      rel,
+    }
+  } else {
+    showEdit.value = false
   }
 })
 
