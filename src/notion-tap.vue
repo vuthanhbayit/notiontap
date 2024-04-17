@@ -13,7 +13,7 @@
 
     <modal-source-code v-if="editor" :editor="editor"></modal-source-code>
 
-    <slot name="append"></slot>
+    <slot name="append" v-bind="{ editor }"></slot>
   </div>
 </template>
 
@@ -57,4 +57,8 @@ const editor = useEditor({
 })
 
 const notionTapRef = ref<HTMLElement | null>(null)
+
+defineExpose({
+  editor,
+})
 </script>

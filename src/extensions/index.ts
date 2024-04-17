@@ -19,7 +19,7 @@ import HorizontalRule from './horizontal'
 import Link from './link'
 import OrderedList from './ordered-list'
 import Placeholder from './placeholder'
-import SlashCommand from './slash-command'
+import { SlashCommand, CommandProps } from './slash-command'
 import Youtube from './youtube'
 import { Columns, Column } from './multi-column'
 import { Table, TableCell, TableHeader, TableRow } from './table'
@@ -94,6 +94,7 @@ export {
   HorizontalRule,
   Placeholder,
   SlashCommand,
+  type CommandProps,
   TextStyle,
   TextAlign,
   Table,
