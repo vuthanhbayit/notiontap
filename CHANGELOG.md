@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.14
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.13...v0.0.14)
+
+### 🩹 Fixes
+
+- Bind append ([4e29a98](https://github.com/vuthanhbayit/notiontap/commit/4e29a98))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.13
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.12...v0.0.13)
