@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.15
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.14...v0.0.15)
+
+### 🩹 Fixes
+
+- Inline image ([6062e29](https://github.com/vuthanhbayit/notiontap/commit/6062e29))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.13...v0.0.14)
