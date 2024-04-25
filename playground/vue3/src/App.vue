@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import NotionTap from '../../../src/notion-tap.vue'
 import {
   ImageUpload,
@@ -23,7 +23,7 @@ import {
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
 const content = ref(
-  '<div data-type="imageBlock"><img src="https://media-api-staging.thinkpro.vn/media/core/products/2024/4/13/564-536x354.jpeg" data-width="100%" data-align="center" loading="lazy"></div>',
+  '<p><img src="https://media-api-staging.thinkpro.vn/media/core/products/2024/4/13/564-536x354.jpeg" data-width="100%" data-align="center" loading="lazy"></p>',
 )
 
 const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {

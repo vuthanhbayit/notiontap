@@ -15,6 +15,8 @@ declare module '@tiptap/core' {
 }
 
 interface Options {
+  inline: boolean
+  allowBase64: boolean
   HTMLAttributes: Record<string, any>
   findImage: (element: Element) => Element | null
 }
@@ -22,16 +24,12 @@ interface Options {
 export const ImageBlock = Image.extend<Options>({
   name: 'imageBlock',
 
-  group: 'block',
-
-  defining: true,
-
-  isolating: true,
-
   textMenu: false,
 
   addOptions() {
     return {
+      inline: false,
+      allowBase64: false,
       HTMLAttributes: {},
       findImage: (element: Element): Element | null => {
         if (element.getAttribute('data-type') === 'imageBlock') {

@@ -75,6 +75,7 @@
     "@vt7/pintura": "^8.16.1",
     "@vt7/utils": "^5.2.1",
     "@vueuse/core": "^10.8.0",
+    "cheerio": "1.0.0-rc.12",
     "filepond": "^4.30.6",
     "filepond-plugin-file-poster": "^2.5.1",
     "filepond-plugin-file-validate-size": "^2.2.8",

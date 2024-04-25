@@ -29,6 +29,7 @@ import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'
 import SearchAndReplace from '@/menus/search-and-replace/index.vue'
 import ModalSourceCode from '@/components/modal-source-code.vue'
+import { fixInlineImage } from '@/utils'
 
 interface Props {
   extensions?: Extensions
@@ -38,7 +39,12 @@ const props = withDefaults(defineProps<Props>(), {
   extensions: [],
 })
 
-const modelValue = defineModel<string>({ required: true })
+const modelValue = defineModel<string>({
+  required: true,
+  get(value) {
+    return fixInlineImage(value)
+  },
+})
 
 const editor = useEditor({
   content: modelValue.value,
