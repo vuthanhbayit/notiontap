@@ -129,7 +129,6 @@ export {
   BookmarkInput,
   WebComponent,
   SourceCode,
-  FilesManager,
   ImageURL,
   TableOfContents,
   type BookmarkInputOptions,
