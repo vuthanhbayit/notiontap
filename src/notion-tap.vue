@@ -28,7 +28,7 @@ import TableColumnMenu from '@/menus/table-column/index.vue'
 import TableRowMenu from '@/menus/table-row/index.vue'
 import ColumnsMenu from '@/menus/columns-menu/index.vue'
 import SearchAndReplace from '@/menus/search-and-replace/index.vue'
-import ModalSourceCode from '@/components/modal-source-code.vue'
+import ModalSourceCode from '@/extensions/source-code/modal-source-code.vue'
 import { fixInlineImage } from '@/utils'
 
 interface Props {

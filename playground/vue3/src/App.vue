@@ -18,13 +18,12 @@ import {
   Bookmark,
   BookmarkInput,
   WebComponent,
+  FilesManager,
   simpleExtensions,
 } from '../../../src/extensions'
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
 
-const content = ref(
-  '<p>aaaaaaaaaaaa</p><p><a target=\\"_blank\\" rel=\\"nofollow noopener\\" href=\\"tel:1900633579\\">1900633579</a><br><br><a target=\\"_blank\\" rel=\\"nofollow noopener\\" href=\\"1900633579\\">1900633579</a></p>',
-)
+const content = ref('<div data-type="imageURL"></div><p></p>')
 
 const loadUrlPreviewData = (url: string): Promise<BookmarkAttribute> => {
   return new Promise((resolve, reject) => {
@@ -86,5 +85,6 @@ const extensions = [
 
   Bookmark,
   WebComponent,
+  FilesManager,
 ]
 </script>

@@ -26,9 +26,11 @@ import { Table, TableCell, TableHeader, TableRow } from './table'
 import { TrailingNode } from './trailing-node'
 import Fullscreen from './fullscreen'
 import SourceCode from './source-code'
+import { FilesManager } from './files-manager'
 
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
+import { ImageURL } from './image-url'
 import { Figure, Figcaption } from './figure'
 import { Bookmark, BookmarkInput, type BookmarkInputOptions, type BookmarkAttribute } from './bookmark'
 import { WebComponent } from './web-component'
@@ -67,6 +69,7 @@ const simpleExtensions = [
   Color,
   Youtube,
   SourceCode,
+  ImageURL,
   Highlight.configure({
     multicolor: true,
   }),
@@ -127,6 +130,8 @@ export {
   BookmarkInput,
   WebComponent,
   SourceCode,
+  FilesManager,
+  ImageURL,
   TableOfContents,
   type BookmarkInputOptions,
   type BookmarkAttribute,
