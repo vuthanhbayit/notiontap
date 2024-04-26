@@ -26,7 +26,6 @@ import { Table, TableCell, TableHeader, TableRow } from './table'
 import { TrailingNode } from './trailing-node'
 import Fullscreen from './fullscreen'
 import SourceCode from './source-code'
-import { FilesManager } from './files-manager'
 
 import { ImageUpload } from './image-upload'
 import { ImageBlock } from './image-block'
