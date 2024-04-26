@@ -42,7 +42,13 @@ const props = withDefaults(defineProps<Props>(), {
 const modelValue = defineModel<string>({
   required: true,
   get(value) {
-    return fixInlineImage(value)
+    try {
+      return fixInlineImage(value)
+    } catch (e) {
+      console.error('fixInlineImage', e)
+
+      return value
+    }
   },
 })
 
