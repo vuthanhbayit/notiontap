@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.17
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.16...v0.0.17)
+
+### 🚀 Enhancements
+
+- Image url extension ([247e23e](https://github.com/vuthanhbayit/notiontap/commit/247e23e))
+
+### 🩹 Fixes
+
+- Remove file manager ([22a504b](https://github.com/vuthanhbayit/notiontap/commit/22a504b))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.16
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.15...v0.0.16)
