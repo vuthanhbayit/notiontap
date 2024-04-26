@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.18
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.17...v0.0.18)
+
+### 🩹 Fixes
+
+- Remove export file manager ([00196e8](https://github.com/vuthanhbayit/notiontap/commit/00196e8))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.17
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.16...v0.0.17)
