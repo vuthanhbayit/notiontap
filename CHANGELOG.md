@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.22
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.21...v0.0.22)
+
+### 🩹 Fixes
+
+- Remove button ([69ef1e7](https://github.com/vuthanhbayit/notiontap/commit/69ef1e7))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.21
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.20...v0.0.21)
