@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.21
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.20...v0.0.21)
+
+### 🩹 Fixes
+
+- Loading lazy setFigure ([632ea4d](https://github.com/vuthanhbayit/notiontap/commit/632ea4d))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.20
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.19...v0.0.20)
