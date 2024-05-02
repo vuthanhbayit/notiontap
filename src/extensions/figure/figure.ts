@@ -10,7 +10,7 @@ declare module '@tiptap/core' {
       /**
        * Add a figure element
        */
-      setFigure: (options: { src: string; alt?: string; caption?: string }) => ReturnType
+      setFigure: (options: { src: string; alt?: string; loading?: 'lazy' | 'eager'; caption?: string }) => ReturnType
 
       /**
        * Converts an image to a figure
