@@ -1,5 +1,16 @@
 <template>
   <div ref="notionTapRef" class="notion-tap">
+    <button
+      @click="
+        editor?.commands.setFigure({
+          src: 'https://test-fe-2.s3.ap-southeast-1.amazonaws.com/2c5eb630c639d3ee55420654369b3804_1714618603666.jpeg',
+          alt: 'alt alt',
+          caption: 'capto',
+        })
+      "
+    >
+      add
+    </button>
     <editor-content v-if="editor" :editor="editor" class="notion-tap__content"></editor-content>
 
     <text-menu v-if="editor" :editor="editor"></text-menu>

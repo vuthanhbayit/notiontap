@@ -18,7 +18,6 @@ import {
   Bookmark,
   BookmarkInput,
   WebComponent,
-  FilesManager,
   simpleExtensions,
 } from '../../../src/extensions'
 import { BookmarkAttribute } from '../../../src/extensions/bookmark'
@@ -85,6 +84,5 @@ const extensions = [
 
   Bookmark,
   WebComponent,
-  FilesManager,
 ]
 </script>

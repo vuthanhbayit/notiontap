@@ -61,7 +61,6 @@ const altText = computed({
 
 const inputRef = ref<HTMLTextAreaElement | null>(null)
 const onOpen = () => {
-  console.log('onOpen')
   nextTick(() => {
     setTimeout(() => {
       if (inputRef.value) {

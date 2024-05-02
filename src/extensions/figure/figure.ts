@@ -8,6 +8,11 @@ declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     figure: {
       /**
+       * Add a figure element
+       */
+      setFigure: (options: { src: string; alt?: string; caption?: string }) => ReturnType
+
+      /**
        * Converts an image to a figure
        */
       imageToFigure: () => ReturnType
@@ -42,6 +47,36 @@ export const Figure = Node.create<FigureOptions>({
 
   addCommands() {
     return {
+      setFigure:
+        ({ caption, ...attrs }) =>
+        ({ chain }) => {
+          return chain()
+            .insertContent({
+              type: this.name,
+              content: [
+                {
+                  type: 'imageBlock',
+                  attrs: attrs,
+                },
+                {
+                  type: 'figcaption',
+                  content: [
+                    {
+                      type: 'paragraph',
+                      content: caption ? [{ type: 'text', text: caption }] : [],
+                    },
+                  ],
+                },
+              ],
+            })
+            .command(({ tr, commands }) => {
+              const { doc, selection } = tr
+              const position = doc.resolve(selection.to - 2).end()
+
+              return commands.setTextSelection(position)
+            })
+            .run()
+        },
       imageToFigure:
         () =>
         ({ tr, commands }) => {
@@ -71,9 +106,6 @@ export const Figure = Node.create<FigureOptions>({
                 },
                 {
                   type: 'figcaption',
-                  attrs: {
-                    placeholder: 'Write a caption…',
-                  },
                   content: [{ type: 'paragraph' }],
                 },
               ],
