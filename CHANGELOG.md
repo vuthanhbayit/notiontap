@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.19
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.18...v0.0.19)
+
+### 🚀 Enhancements
+
+- SetFigure ([a1d16c9](https://github.com/vuthanhbayit/notiontap/commit/a1d16c9))
+
+### ❤️ Contributors
+
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.18
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.17...v0.0.18)
