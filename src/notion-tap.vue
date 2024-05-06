@@ -2,7 +2,11 @@
   <div ref="notionTapRef" class="notion-tap">
     <editor-content v-if="editor" :editor="editor" class="notion-tap__content"></editor-content>
 
-    <text-menu v-if="editor" :editor="editor"></text-menu>
+    <text-menu v-if="editor" :editor="editor">
+      <template #append>
+        <slot name="text-menu-append" v-bind="{ editor }"></slot>
+      </template>
+    </text-menu>
     <link-menu v-if="editor" :editor="editor"></link-menu>
 
     <table-menu v-if="editor" :editor="editor"></table-menu>
@@ -21,13 +25,7 @@
 import { ref } from 'vue'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import type { Extensions } from '@tiptap/core'
-import TextMenu from '@/menus/text-menu/index.vue'
-import LinkMenu from '@/menus/link-menu/index.vue'
-import TableMenu from '@/menus/table/index.vue'
-import TableColumnMenu from '@/menus/table-column/index.vue'
-import TableRowMenu from '@/menus/table-row/index.vue'
-import ColumnsMenu from '@/menus/columns-menu/index.vue'
-import SearchAndReplace from '@/menus/search-and-replace/index.vue'
+import { TextMenu, LinkMenu, TableMenu, TableColumnMenu, TableRowMenu, ColumnsMenu, SearchAndReplace } from '@/menus'
 import ModalSourceCode from '@/extensions/source-code/modal-source-code.vue'
 import { fixInlineImage } from '@/utils'
 
@@ -38,6 +36,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   extensions: [],
 })
+
+const emits = defineEmits(['created'])
 
 const modelValue = defineModel<string>({
   required: true,
@@ -58,7 +58,13 @@ const editor = useEditor({
   extensions: props.extensions,
 
   onUpdate: ({ editor }) => {
-    modelValue.value = editor.getHTML()
+    const html = editor.getHTML()
+
+    modelValue.value = html === '<p></p>' ? '' : html
+  },
+
+  onCreate({ editor }) {
+    emits('created', editor)
   },
 
   editorProps: {

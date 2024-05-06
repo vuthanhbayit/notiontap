@@ -8,3 +8,4 @@ import './assets/upload-image.css'
 
 export { NotionTap }
 export * from './extensions'
+export * from './components'

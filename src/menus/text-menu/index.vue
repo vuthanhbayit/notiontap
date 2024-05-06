@@ -11,6 +11,13 @@
 
       <align-command :options="alignOptions"></align-command>
 
+      <color-command
+        :current-background="states.currentHighlight()"
+        :current-color="states.currentColor()"
+        :on-set-background="commands.onSetBackgroundColor"
+        :on-set-color="commands.onSetColor"
+      ></color-command>
+
       <toolbar-button
         v-for="(command, index) in toolbarCommands"
         :key="index"
@@ -23,19 +30,14 @@
 
       <link-command :on-set-link="commands.onLink"></link-command>
 
-      <color-command
-        :current-background="states.currentHighlight()"
-        :current-color="states.currentColor()"
-        :on-set-background="commands.onSetBackgroundColor"
-        :on-set-color="commands.onSetColor"
-      ></color-command>
-
       <toolbar-button
         :command="commands.onSetSearchAndReplace"
         :shortcuts="['Mod', 'F', '&', 'Mod', 'R']"
         icon="i-ri-search-line"
         title="Search and Replace"
       ></toolbar-button>
+
+      <slot name="append" v-bind="{ editor }"></slot>
     </toolbar-wrapper>
   </bubble-menu>
 </template>
