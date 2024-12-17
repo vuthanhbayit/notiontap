@@ -25,7 +25,13 @@
                 </p>
 
                 <div class="mt-2">
-                  <textarea ref="inputRef" v-model="altText" class="border p-2 rounded text-xs w-full" type="text" />
+                  <textarea
+                    ref="inputRef"
+                    v-model="altText"
+                    class="border p-2 rounded text-xs w-full"
+                    type="text"
+                    @input="removeDoubleQuotes"
+                  />
                 </div>
               </div>
             </PopoverPanel>
@@ -72,5 +78,9 @@ const onOpen = () => {
 
 const onAddCaption = () => {
   props.editor.chain().focus().imageToFigure().run()
+}
+
+const removeDoubleQuotes = () => {
+  altText.value = altText.value.replace(/"/g, '')
 }
 </script>
