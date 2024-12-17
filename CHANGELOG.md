@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.24
+
+[compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.23...v0.0.24)
+
+### 🩹 Fixes
+
+- Npmrc for pnpm peer dependencies ([efcadb9](https://github.com/vuthanhbayit/notiontap/commit/efcadb9))
+
+### 🏡 Chore
+
+- Fix alt image ([1a90c3e](https://github.com/vuthanhbayit/notiontap/commit/1a90c3e))
+
+### ❤️ Contributors
+
+- Thế Anh01~ <namelaanh@gmail.com>
+- Vu Thanh Bay <vuthanhbayit@gmail.com>
+
 ## v0.0.23
 
 [compare changes](https://github.com/vuthanhbayit/notiontap/compare/v0.0.22...v0.0.23)
